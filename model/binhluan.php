@@ -1,5 +1,8 @@
 <?php 
-    function loadall_binhluan($idsp){
+
+    /*
+    xem để hiểu thêm 1 cách loadall bình luận của thầy longhh
+        function loadall_binhluan($idsp){
         $sql = "
             SELECT binhluan.id, binhluan.noidung, taikhoan.user, binhluan.ngaybinhluan FROM `binhluan` 
             LEFT JOIN taikhoan ON binhluan.iduser = taikhoan.id
@@ -9,6 +12,10 @@
         $result =  pdo_query($sql);
         return $result;
     }
+
+    **/
+
+
     function insert_binhluan($idpro, $noidung, $iduser){
         $date = date('Y-m-d');
         $sql = "
@@ -32,6 +39,10 @@
         $sql = "select * from binhluan where `id` = $id";
         $result = pdo_query_one($sql);
         return $result;
+    }
+    function deletebl($id) {
+        $sql = "DELETE FROM `binhluan` WHERE id=".$id;
+        pdo_execute($sql);
     }
 
 ?>

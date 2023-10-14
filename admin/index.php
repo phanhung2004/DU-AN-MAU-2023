@@ -119,6 +119,14 @@
                 // post có giá trị, tồn tại, và khác rỗng, mull, 0, fall
                 include "tk_khachhang/edittk.php";
                 break;
+            case "deletetk":
+                if(isset($_GET['idtk']) && ($_GET['idtk']>0)){
+                    deletetk($_GET['idtk']);
+                }
+
+                $listtaikhoan = loadall_taikhoan();
+                include "tk_khachhang/khachhang.php";
+                break;
             case "binhluan":
                 $listbinhluan = loadall_binhluanadmin();
                 include "show_binhluan/show_binhluan.php";
@@ -141,11 +149,20 @@
                 // echo $binhluan;
                 include "show_binhluan/editbl.php";
                 break;
+            case "deletebl":
+                if(isset($_GET['idbl']) && ($_GET['idbl']>0)){
+                    deletebl($_GET['idbl']);
+                }
+
+                $listbinhluan=loadall_binhluanadmin();
+                include "show_binhluan/show_binhluan.php";
+                break;
             case "thongke":
                     $listthongke = loadall_thongke();
                     include "thongke/thongke.php";
                     break;  
-            case "bieudo":  
+            case "bieudo":
+                 
                 $listthongke = loadall_thongke();
                 include "thongke/bieudo.php";
                 break;

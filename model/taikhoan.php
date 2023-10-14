@@ -88,5 +88,9 @@
     //     pdo_execute($sql);
     // }
 
+    function deletetk($id) {
+        $sql = "DELETE FROM `taikhoan` WHERE id=".$id;
+        pdo_execute($sql);
+    }
 
 ?>
