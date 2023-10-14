@@ -2,7 +2,22 @@
 
     <div class="mb">
         <div class="box_title">TÀI KHOẢN</div>
-        <?php if (!$_SESSION) { ?>
+        <?php if (isset($_SESSION['user'])) { 
+            extract($_SESSION['user']);
+        ?>
+            <p>Hello <?=$user?></p>
+            <button><a href="index.php?act=dangxuat">Đăng xuất</a></button>
+            <?php
+                if($role==1){
+            ?>
+            <button><a href="admin/index.php">Admin</a></button>
+            <?php
+            }
+            ?>
+            <button><a href="index.php?act=edittk">Cập nhật tài khoản</a></button>
+        <?php
+        }else{
+        ?>
         <div class="box_content form_account">
             <form action="index.php?act=dangnhap" method="POST">
             <h4>Tên đăng nhập</h4><br>
@@ -19,9 +34,6 @@
             <li class="form_li"><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
             <li class="form_li"><a href="index.php?act=dangky">Đăng kí thành viên</a></li>
         </div>
-        <?php } else { ?>
-            <p>Hello <?=$_SESSION['user']?></p>
-            <button><a href="index.php?act=dangxuat">Đăng xuất</a></button>
         <?php } ?>
     </div>
     <div class="mb">
@@ -46,6 +58,7 @@
         <div class="box_search">
             <form action="index.php?act=sanpham" method="POST">
                 <input type="text" id="" placeholder="Từ khóa tìm kiếm" name="keyword">
+                
             </form>
         </div>
     </div>
@@ -59,7 +72,7 @@
                         $linksp="index.php?act=sanphamct&idsp=".$id;
                         $img=$img_path.$img;
                         echo'<div class="selling_products" style="width:100%;">
-                  <img src="'.$img.'" alt="anh">
+                        <a href="'.$linksp.'"><img src="'.$img.'" alt="anh"></a>
                   <a href="'.$linksp.'">'.$name.'</a>
                 </div>';
                     }

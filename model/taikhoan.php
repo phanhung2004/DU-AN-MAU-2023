@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     
     //dang ky
     function insert_taikhoan($email,$user,$pass){
@@ -7,15 +7,11 @@
         pdo_execute($sql);
     }
 
-    function dangnhap($user,$pass) {
+    function checkuser($user,$pass) {
         $sql="SELECT * FROM taikhoan WHERE user='$user' and pass='$pass'";
         $taikhoan = pdo_query_one($sql);
+        return $taikhoan;
 
-        if ($taikhoan != false) {
-            $_SESSION['user'] = $user;
-        } else {
-            return "Thông tin tài khoản sai";
-        }
     }
 
     function dangxuat() {
@@ -35,6 +31,11 @@
         } else {
             return "Email bạn nhập ko có trong hệ thống";
         }
+    }
+    function loadall_taikhoan() {
+        $sql="select * from taikhoan order by id desc";
+        $listtaikhoan=pdo_query($sql);
+        return  $listtaikhoan;
     }
 
     function sendMailPass($email, $username, $pass) {
@@ -69,4 +70,23 @@
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
+    function updatetk($id, $user, $pass, $address, $sdt, $email) {
+        $sql = "UPDATE `taikhoan` SET `user` = '{$user}', `pass` = '{$pass}', `address` = '{$address}', `tel` = '{$sdt}', `email` = '{$email}' WHERE `id` = '{$id}'";
+        pdo_execute($sql);
+    }
+    function add_taikhoan($tentaikhoan, $address, $pass, $email, $tel){
+            $sql = "INSERT INTO `taikhoan` (`user`, `address`, `pass`, `email`, `tel`) VALUES ('$tentaikhoan', '$address','$pass','$email', '$tel');";
+            pdo_execute($sql);
+    }
+    function loadone_taikhoan($id){
+        $sql = "select * from taikhoan where `id` = $id";
+        $result = pdo_query_one($sql);
+        return $result;
+    }
+    // function updatetk($id, $tentaikhoan, $address, $pass, $usemailer, $tel) {
+    //     $sql = "UPDATE `taikhoan` SET `user` = '{$tentaikhoan}', `address` = '{$address}', `pass` = '{$pass}', `email` = '{$usemailer}', `tel` = '{$tel}' WHERE `taikhoan`.`id` = $id";
+    //     pdo_execute($sql);
+    // }
+
+
 ?>

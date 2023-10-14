@@ -34,3 +34,19 @@ function load_sanpham_cungloai($id, $iddm){
     $result = pdo_query($sql);
     return $result;
 }
+function insert_sanpham($tensanpham, $mota, $giasp, $hinhanh, $iddm){
+    $sql = "INSERT INTO `sanpham` (`name`, `price`, `img`, `mota`, `iddm`) VALUES ('$tensanpham', '$giasp','$hinhanh','$mota', '$iddm');";
+    pdo_execute($sql);
+}
+function updatesp($id, $iddm, $tensanpham, $giasp, $mota, $hinhanh) {
+    if($hinhanh!=""){
+        $sql = "UPDATE `sanpham` SET `name` = '{$tensanpham}', `price` = '{$giasp}', `img` = '{$hinhanh}', `mota` = '{$mota}', `iddm` = '{$iddm}' WHERE `sanpham`.`id` = $id";
+    }else{
+        $sql = "UPDATE `sanpham` SET `name` = '{$tensanpham}', `price` = '{$giasp}', `img` = '{$hinhanh}', `mota` = '{$mota}', `iddm` = '{$iddm}' WHERE `sanpham`.`id` = $id";
+    }
+    pdo_execute($sql);
+}
+function delete($id) {
+    $sql = "DELETE FROM `sanpham` WHERE id=".$id;
+    pdo_execute($sql);
+}

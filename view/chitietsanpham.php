@@ -1,3 +1,4 @@
+
 <style>
 td {
     padding: 0 20px;
@@ -6,6 +7,7 @@ td {
 <main class="catalog  mb ">
     <div class="boxleft">
         <?php extract($sanpham); ?>
+
         <div class="  mb">
             <div class="box_title">
                 <?php echo $name; ?>
@@ -15,6 +17,7 @@ td {
                     $img = $img_path . $img;
                     echo "<img src='$img' width='300'>";
                     echo "<p>$mota</p>";
+
                 ?>
 
             </div>

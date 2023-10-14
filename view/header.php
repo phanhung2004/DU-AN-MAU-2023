@@ -25,28 +25,28 @@
             <ul>
                 
                 <li class="dropdown">
-                  <a class="dropdownbtn" href="">Trang chủ</a>
+                  <a class="dropdownbtn" href="index.php?act=home">Trang chủ</a>
                   <div class="dropdown_content">
                      <a href="">Đồng hồ</a>
                      <a href="">Điện thoại</a>
                      <a href="">Laptop</a>
                   </div>
                 <li class="dropdown">
-                  <a class="dropdownbtn" href="">Danh mục</a>
+                  <a class="dropdownbtn" href="index.php?act=danhmuc">Danh mục</a>
                   <div class="dropdown_content">
                      <a href="">Đồng hồ</a>
                      <a href="">Điện thoại</a>
                      <a href="">Laptop</a>
                   </div>
                 <li class="dropdown">
-                  <a class="dropdownbtn" href="">Sản Phẩm</a>
+                  <a class="dropdownbtn" href="index.php?act=sanpham">Sản Phẩm</a>
                   <div class="dropdown_content">
                      <a href="">Đồng hồ</a>
                      <a href="">Điện thoại</a>
                      <a href="">Laptop</a>
                   </div>
                 <li class="dropdown">
-                  <a class="dropdownbtn" href="">Bình luận</a>
+                  <a class="dropdownbtn" href="index.php?act=binhluan">Bình luận</a>
                   <div class="dropdown_content">
                      <a href="">Đồng hồ</a>
                      <a href="">Điện thoại</a>

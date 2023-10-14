@@ -16,17 +16,18 @@
 
 // Set Data
           const data = google.visualization.arrayToDataTable([
-            ['Contry', 'Mhl'],
-            ['Italy',54.8],
-            ['France',48.6],
-            ['Spain',44.4],
-            ['USA',23.9],
-            ['Argentina',14.5]
+            ['danhmuc', 'soluong'],
+            <?php
+            foreach($listthongke as $thongke) {
+              extract($thongke);
+              echo "['$tendm', $countsp],";
+            } 
+            ?>
           ]);
 
 // Set Options
           const options = {
-            title:'World Wide Wine Production',
+            title:'THỐNG KÊ DANH MỤC SẢN PHẨM',
             is3D:true
           };
 

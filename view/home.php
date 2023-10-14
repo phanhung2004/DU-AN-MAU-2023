@@ -20,7 +20,7 @@
                     
                     echo '<div class="box_items '.$mr.'">
                     <div class="box_items_img">
-                <img src="'.$hinh.'" alt="">
+                <a href="'.$linksp.'"><img src="'.$hinh.'" alt=""></a>
                 <div class="add" href="">ADD TO CART</div>
              </div>
               <a class="item_name" href="'. $linksp .'">'.$name.'</a>

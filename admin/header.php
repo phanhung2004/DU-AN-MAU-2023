@@ -22,12 +22,12 @@
         <div class="row mb menu">
             <ul>
                 
-              <li><a href="index.html">Trang chủ</a></li>
-              <li><a href="admin.html">Danh mục</a></li>
-              <li><a href="">Hàng hóa</a></li>
-              <li><a href="">Khách hàng</a></li>
-              <li><a href="">Bình luận</a></li>
-              <li><a href="">Thống kê</a></li>
+              <li><a href="index.php?act=home">Trang chủ</a></li>
+              <li><a href="index.php?act=listsp">Danh mục</a></li>
+              <li><a href="index.php?act=addsp">Hàng hóa</a></li>
+              <li><a href="index.php?act=dstaikhoan">Khách hàng</a></li>
+              <li><a href="index.php?act=binhluan">Bình luận</a></li>
+              <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
         </div>
        </header>

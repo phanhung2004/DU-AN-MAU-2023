@@ -9,15 +9,29 @@
         $result =  pdo_query($sql);
         return $result;
     }
-    function insert_binhluan($idpro, $noidung){
+    function insert_binhluan($idpro, $noidung, $iduser){
         $date = date('Y-m-d');
         $sql = "
             INSERT INTO `binhluan`(`noidung`, `iduser`, `idpro`, `ngaybinhluan`) 
-            VALUES ('$noidung','2','$idpro','$date');
+            VALUES ('$noidung','$iduser','$idpro','$date');
         ";
         //echo $sql;
         //die;
         pdo_execute($sql);
+    }
+    function loadall_binhluanadmin() {
+        $sql="select * from binhluan order by id desc";
+        $listbinhluan=pdo_query($sql);
+        return  $listbinhluan;
+    }
+    function updatebl($id, $noidung) {
+        $sql = "UPDATE `binhluan` SET `noidung` = '{$noidung}' WHERE `id` = '{$id}'";
+        pdo_execute($sql);
+    }
+    function loadone_binhluan($id){
+        $sql = "select * from binhluan where `id` = $id";
+        $result = pdo_query_one($sql);
+        return $result;
     }
 
 ?>
