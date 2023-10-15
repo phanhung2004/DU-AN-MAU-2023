@@ -36,6 +36,9 @@ td {
                     <?php endforeach; ?>
                 </table>
             </div>
+            <?php 
+                if(isset($_SESSION['user'])){
+            ?>
             <div class="box_search">
                 <form action="index.php?act=sanphamct&idsp=<?=$id?>" method="POST">
                     <input type="hidden" name="idpro" value="<?=$id?>">
@@ -43,7 +46,9 @@ td {
                     <input type="submit" name="guibinhluan" value="Gửi bình luận">
                 </form>
             </div>
-
+            <?php 
+                }
+            ?>
         </div>
 
         <div class=" mb">

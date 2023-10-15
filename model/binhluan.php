@@ -1,7 +1,4 @@
 <?php 
-
-    /*
-    xem để hiểu thêm 1 cách loadall bình luận của thầy longhh
         function loadall_binhluan($idsp){
         $sql = "
             SELECT binhluan.id, binhluan.noidung, taikhoan.user, binhluan.ngaybinhluan FROM `binhluan` 
@@ -12,8 +9,6 @@
         $result =  pdo_query($sql);
         return $result;
     }
-
-    **/
 
 
     function insert_binhluan($idpro, $noidung, $iduser){
